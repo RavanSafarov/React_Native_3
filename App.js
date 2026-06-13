@@ -5,6 +5,7 @@ import ListEmptyComponent from './companents/ListEmptyComponent';
 import ItemSeparatorComponent from './companents/ItemSeparatorComponent';
 import ListHeaderComponent from './companents/ListHeaderComponent';
 import { useState } from 'react';
+import ListOfNames from './companents/ListOfNames'; 
 const users = [
   { id: '1', avatar:'https://i.pravatar.cc/150?img=1', name: 'Alex', role: 'Frontend' },
   { id: '2', avatar:'https://i.pravatar.cc/150?img=2', name: 'Maria', role: 'Backend' },
@@ -16,7 +17,9 @@ export default function App() {
   const [selectId,setselectId] = useState(null)
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Task1,4:</Text>
+      <Text style={styles.text}>Task1</Text>
+      <ListOfNames />
+      <Text style={styles.text}>Task2,4:</Text>
       <FlatList data={users}  renderItem={({item})=>(
         console.log(users),
         <ProfileCard id={item.id} avatar={item.avatar} name={item.name} role={item.role} selectId={selectId} onPres={()=> setselectId(item.id)}/>
